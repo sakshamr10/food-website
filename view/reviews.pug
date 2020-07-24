@@ -1,0 +1,17 @@
+extends base
+block content
+  .container-grey
+    .form-container
+      form.signup.form-page
+        h3.heading-secondary REVIEWS
+        .entry
+          .entry-text
+            |Review
+          input(type='text', name='Review', placeholder='Enter Your Review', required='',class="review")
+        .entry
+          .entry-text
+            | Rating
+          input(type='Number', name="Rating", placeholder='Rating',required ='', class="rating")
+        .entry
+            .btn-parent.left
+                button(type="submit").btn.btn-full.form-button POST REVIEW  
