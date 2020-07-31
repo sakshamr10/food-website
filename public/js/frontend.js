@@ -1,7 +1,7 @@
 
 // alert("I will go to the client ");
 const d = document;
-const stripe = Stripe('pk_test_ZN4f6Z1tmqHyaKzHblk84y2K00unLLJgRr');
+const stripe = Stripe('pk_test_NIewwioMY77PziLNVuLcjGps00Gytfkh0O');
 const paymentBtns = d.querySelectorAll(".payment");
 const loginForm = d.querySelector(".login");
 const emailBox = d.querySelector(".email");
@@ -11,6 +11,7 @@ const updateProfile = d.querySelector(".updateProfile");
 const forgetForm = d.querySelector(".forgetPassword");
 const resetPasswordForm = d.querySelector(".resetPassword");
 const signupForm = d.querySelector(".signup");
+const reviewForm = d.querySelector(".review")
 
 async function payementHelper(planId) {
   const response = await axios.post("/api/bookings/createSession", { planId });
@@ -88,6 +89,11 @@ async function resetPasswordHelper(password, confirmPassword, resetToken) {
     alert("something wnet wrong")
   }
 }
+async function reviewHelper(review, rating,userId){
+  const response = await axios.post("/api/reviews/createReview", {
+    review, rating, userId
+  });
+}
 if (loginForm) {
   loginForm.addEventListener("submit", function (e) {
     // default behaviour 
@@ -139,7 +145,14 @@ if (resetPasswordForm) {
     resetPasswordHelper(password, confirmPassword, token);
   })
 }
-
+if(reviewForm){
+  reviewForm.addEventListener("submit", function(e){
+    const review = d.querySelector(".review").value;
+    const rating = d.querySelector(".rating").value;
+    const userId = reviewForm.getAttribute("user-id");
+    reviewHelper(review,rating,userId)
+  })
+}
 if (signupForm) {
   signupForm.addEventListener("submit", function (e) {
     // form reload 

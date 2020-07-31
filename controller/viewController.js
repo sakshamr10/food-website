@@ -9,9 +9,11 @@ function getTrialPage(req, res) {
 }
 async function getReviewpage(req,res){
   const user = await userModel.findById(req.id);
+  const name = req.userName;
+  
   const reviews = await reviewModel.find()
   res.render("reviews.pug",{
-      title: "REVIEWS page",user
+      title: "REVIEWS page", user,name,
 
   })
 }

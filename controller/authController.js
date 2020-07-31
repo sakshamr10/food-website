@@ -171,6 +171,7 @@ async function forgetPassword(req, res) {
       let options = {
         to: user.email,
         html,
+        from:"customersupport@everyone.com",
         subject: subject
       }
       await emailHelper(options);

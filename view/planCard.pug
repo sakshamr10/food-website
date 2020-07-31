@@ -22,5 +22,7 @@
     .signup-button
       if name    
         a.btn.btn-full(href='javascript:;', plan-id=`${plan["_id"]}`).payment I'm hungry
+        a.btn.btn-full(href='/reviews',  plan-id=`${plan["_id"]}`) Add Review
       else
         a.btn.btn-full(href='/login') I'm hungry
+        a.btn.btn-full(href='/login') Add Review

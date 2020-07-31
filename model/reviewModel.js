@@ -30,7 +30,7 @@ const reviewSchema = new mongoose.Schema({
   },
   plan: {
     type: mongoose.Schema.ObjectId,
-    ref: "janUserModel",
+    ref: "janplanModel",
     required: [true, "Review must belong to a plan"]
   },
   user: {
@@ -40,11 +40,16 @@ const reviewSchema = new mongoose.Schema({
   }
 })
 // find ,finone ,findById
+// reviewSchema.pre(/^find/, function (next) {
+//   this.populate({
+//     path: "user",
+//     select: "name profileImage"
+//   }).populate("plan");
+//   next();
+// })
 reviewSchema.pre(/^find/, function (next) {
-  this.populate({
-    path: "user",
-    select: "name profileImage"
-  }).populate("plan");
+  console.log("I");
+  this.populate("plan").populate("user");
   next();
 })
 

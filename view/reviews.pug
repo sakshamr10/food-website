@@ -2,7 +2,9 @@ extends base
 block content
   .container-grey
     .form-container
-      form.signup.form-page
+      video.bg-video_content(autoplay='', muted='', loop='')
+        source(src='Avocado.mp4', type='video/mp4')
+      form.reviews.form-page
         h3.heading-secondary REVIEWS
         .entry
           .entry-text
@@ -14,4 +16,4 @@ block content
           input(type='Number', name="Rating", placeholder='Rating',required ='', class="rating")
         .entry
             .btn-parent.left
-                button(type="submit").btn.btn-full.form-button POST REVIEW  
+                button(type="submit",  user-id=`${user["_id"]}`).btn.btn-full.form-button POST REVIEW  

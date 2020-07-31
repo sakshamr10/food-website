@@ -286,10 +286,11 @@ cite {
   margin: 1rem;
 }
 .signup-button {
-  text-align: center;
+  
   position: relative;
   /* top: 0.rem; */
   top: 1.5rem;
+  display: flex;
   /* left: 5rem; */
 }
 .pricing {
@@ -328,7 +329,7 @@ form {
 }
 .entry-text {
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
   font-size: 110%;
 }
 input[type="text"],
@@ -414,7 +415,8 @@ align-items: center;
 padding:4vh;
 }
 .form-container{
-  width:50vw;
+  display: flex;
+  width:80vw;
 }
 /* login page css */
 .form-page{
@@ -456,4 +458,52 @@ position: relative;
 }
 .form-links:hover{
   transform: scale(1.2);
+}
+.user-container{
+  display: flex;
+  height: 50vh;
+}
+.user-details{
+  justify-content: left;
+  margin-left: 6rem;
+  margin-top: 5rem;
+}
+.user-details p{
+  justify-content: flex-start;
+  text-align: left;
+  font-size: 80%;
+}
+.user-image{
+  margin-left: 10rem;
+  margin-top: 3rem;
+}
+
+.user-image input{
+  margin-left: 4rem;
+}
+.user-image img{
+  height: 30vh;
+}
+.bg-video_content{
+  width: 40%;
+}
+form.login.form-page{
+  margin-left: 2rem;
+}
+form.signup.form-page{
+  margin-left: 2rem;
+}
+form.reviews.form-page{
+  margin-left: 2rem;
+}
+a.btn.btn-full{
+  margin-left: 1.5rem;
+}
+form.forgetPassword.form-page{
+  margin-left: 1rem;
+}
+.forget-container{
+  display: flex;
+  width: 80vw;
+  height: 70vh;
 }

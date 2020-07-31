@@ -1,16 +1,19 @@
 extend base
 block  content
-    h2 User Page
+    h2 User Profile
       .user-container
-          p Name :#{user.name}
-          p Email:#{user.email}
-          p Image 
-            img(src=`${user.profileImage}`, alt="", srcset="")
-            input(type="file", name="photo").updateProfile
+        .user-image  
           p 
+            img(src=`${user.profileImage}`, alt="", srcset="")
+          p  
+            input(type="file", name="photo").updateProfile
+        .user-details    
+          p Name : #{user.name}
+          p Email: #{user.email}
+          //p 
             a(herf="/") Settings
           
-          if user.role=="admin"
+          //if user.role=="admin"
             p 
               a(href="/managePlans" ) Manage Plans
             p 
