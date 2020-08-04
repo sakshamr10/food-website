@@ -48,7 +48,7 @@ function typeWriter(txtElement, words, wait) {
       // Move to next word
       wordIndex++;
       // Pause before start typing
-      typeSpeed = 500;
+      typeSpeed = 800;
     }
     setTimeout(function () {
       typer()
